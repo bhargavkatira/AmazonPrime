@@ -1,0 +1,25 @@
+#login{
+    margin: center;
+    /* border: 1px solid green; */
+}
+#login img{
+    /* border: 1px solid red; */
+    width: 300px;
+    height: 200px;
+    transform: translateX(200%);
+    /* margin: auto; */
+}
+#login-form{
+border:1px solid green;
+width: 250px;
+display: block;
+margin:auto;
+text-align: center;
+}
+#login-form input{
+    width: 220px;
+}
+#login #login-form #login-button{
+text-decoration: none;
+color:black;
+}

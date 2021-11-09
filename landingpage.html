@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        color: #fff;
+        background-color: #000;
+    }
+    #navbar{
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-around; */
+        grid-template-rows: 80% 10% 10%;
+        background-color: #0f171e;
+        height: 80px;
+        color: rgb(190, 181, 181);
+        width: 100%;
+    }
+
+    #navbar > #lang #sign-in {
+       float: right;
+    }
+    #navbar img{
+        margin-top: 10px;
+        margin-left: 20px;
+        width: 140px;
+        height: 60px;
+    }
+
+    .signup{
+        display: flex;
+        flex-direction: row;
+        grid-template-columns:40% 40%;
+        gap: 5%;
+        /* border: 1px solid white; */
+    }
+
+     .signup #left-1{
+       background-image: url('/region/eu/auth-redirect/ref_=dvm_mlp_in_ai_s_g_unrec_lego?signin=1&amp;returnUrl=%2Fregion%2Ffr%2F');
+    
+    }
+    .signup #left-1 #signup-button{
+        background-color:#0f79af;
+        color: #fff;
+        height: 35px;
+        width: 200px;
+        font-size: 16px;
+        border-radius: 3px;
+        border: none;
+    }
+        
+    .signup #left-1 #signup-button a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+.signup #right-1 img{
+    width: 800px;
+    height: 400px;
+}
+</style>
+<body>
+    <div id="navbar">
+        <img src="https://i.postimg.cc/BnWBVtY4/download.png">
+        <p id="lang">EN</p>
+        <p id="sign-in">Sign In</p>
+    </div>
+    <div class="signup">
+    <div id="left-1">
+        <h1>Welcome to Prime Video</h1>
+        <p>Join Prime to watch the latest movies, TV shows and award-winning Amazon Originals</p>
+        <button id="signup-button"><a href="./login.html">Sign in to Join Prime</a></button>
+    </div>
+    <div id="right-1">
+        <img src="https://i.postimg.cc/T17HbGfh/banner-image.jpg">
+    </div>
+</div>
+    
+    
+</body>
+</html>
