@@ -1,0 +1,76 @@
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+  }
+  
+  
+  .Containers {
+   width: 100%;
+   height: 50vh;
+    
+  }
+  
+  
+  
+  
+  .Back{
+    background: url(https://images-static.nykaa.com/uploads/3df01759-af0c-4d81-b2f7-f61577ac3807.svg);
+      background-repeat:no-repeat;
+      transform:initial;
+      height:56px;
+      width:56px;
+      top:40%;
+      content:' ';
+      display:inline-block;
+      position:absolute;
+      left:8px;
+      border:5px;
+      cursor:pointer;
+      z-index: 7;
+  }
+  .forward{
+    background: url(https://images-static.nykaa.com/uploads/45d5a7b6-86eb-4850-9568-4d6ed91731fe.svg);
+      background-repeat:no-repeat;
+      transform:initial;
+      height:56px;
+      width:56px;
+      top: 40%;
+      content:'';
+      display:inline-block;
+      position:absolute;
+      right:8px;
+      border:5px ;
+      cursor:pointer;
+      z-index:7;
+  }
+  
+  
+  .Containers img{
+    width: 100%;
+  }
+  
+  .indicator{
+    text-align: center;
+  position: absolute;
+  left: 44%;
+  top: 58%;
+  }
+  
+  .dots {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 7px;
+     
+    background: #F8BBD0 !important;
+    border-radius: 50%;
+   
+    transition: background-color 0.2s ease;
+  }
+  
+  .enable, .dots:hover {
+   background-color: #E91E63 !important;;
+  }

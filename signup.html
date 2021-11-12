@@ -9,32 +9,82 @@
 <body>
     <div id="signup">
         <img src="https://m.media-amazon.com/images/G/01/support_images/GUID-A5E374A8-16DA-4B39-8E3F-3F3B34E831FB=2=en-US=Normal.png">
-
+        
     <form id="signup-form">
         <h2>Create Account</h2>
         <label>Email</label>
         <br>
-        <input type="email" id="email" placeholder="email">
+        <input type="email" id="email" placeholder="email" required>
         <br>
         <br>
         <label>password</label>
         
         <br>
-        <input type="password" id="password" placeholder="password">
+        <input type="password" id="password" placeholder="password" required>
         <br>
         <br>
         <label>Re-enter password</label>
        
         <br>
-        <input type="password" id="password1" placeholder="password">
+        <input type="password" id="password1" placeholder="password" required> 
         <br>
         <br>
-        <input type="submit" placeholder="Create your Amazon Account">
+        <button onclick="signup(event)" class="hello">submit</button>
         <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
         <hr>
         <p>Already have an account</p>
-        <button><a href="./login.html">Sign-in</a></button>
+        <button id="hello1"><a href="./login.html" class="h" >Sign-in</a></button>
     </form>
 </div>
 </body>
 </html>
+<script>
+// function signup(e)
+// {  
+//       e.preventDefault();
+//     let userdetail = {
+//      email : document.getElementById("email").value,
+//      password : document.getElementById("password").value,
+//      password1 : document.getElementById("password1").value
+        
+//     };
+//     console.log(userdetail);
+//     if (localStorage.getItem("signupuser") === null) {
+//         localStorage.setItem("signupuser", JSON.stringify([]));
+//     }
+
+//     // let address1 = [];
+//     // address1.push(userdetail);
+//     localStorage.setItem("signupuser", JSON.stringify(userdetail));
+
+
+//     name.value = "";    
+//     password.value = "";
+//     password1.value = "";
+    
+//     window.location.href = "login.html";
+
+
+
+
+function signup(e){
+    e.preventDefault();
+    let data = {
+        input : document.getElementById('email').value,
+        password : document.getElementById('password').value,
+        password1 : document.getElementById('password1').value,
+    }
+
+    if (password.value !== password1.value) {
+                alert("Password does not match");
+                window.location.href = "signup.html";
+    }
+                else{
+                    window.location.href = "login.html"
+            }
+            localStorage.setItem("Data-User", JSON.stringify(data));
+            console.log(data);
+
+}
+
+</script>

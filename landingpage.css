@@ -1,0 +1,361 @@
+* {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+}
+
+
+#navbar{
+display: flex;
+flex-direction: row;
+/* justify-content: space-around; */
+grid-template-rows: 80% 10% 10%;
+background-color: #0f171e;
+height: 80px;
+color: rgb(190, 181, 181);
+width: 100%;
+position: sticky;
+top:0%;
+z-index: 100;
+}
+
+#right1{
+    /* border:1px solid red; */
+    display: flex;
+    flex-direction: row;
+    gap: 15%;
+    width: 200px;
+    margin-left: 75%;
+    font-size: 18px;
+    margin-top: 18px;
+}
+#right1 a{
+ text-decoration: none;
+ color: rgb(190, 181, 181);
+}
+#navbar img{
+margin-top: 10px;
+margin-left: 50px;
+width: 140px;
+height: 60px;
+}
+
+.welcometoprime {
+    width: 100%;
+   
+    background-color: #0f171e;
+    background-image: url('https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP_V2.jpg');
+
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.heading {
+    position: absolute;
+    top: 14.5%;
+    left: 3.5%;
+}
+
+.below {
+    width: 40%;
+    position: absolute;
+    top: 26.5%;
+    left: 3.5%;
+}
+
+button {
+    background-color: #0f79af;
+    color: #fff;
+    position: absolute;
+    top: 43.5%;
+    left: 3.9%;
+    width: 20%;
+    height: 7vh;
+    border-radius: 5%;
+    
+}
+
+.smally {
+    color: #fff;
+    position: absolute;
+    top: 52.5%;
+    left: 5.9%;
+    font-size: 14px;
+}
+.smally:hover{
+    color: white;
+}
+
+.btn-o {
+    background-color: #0f79af;
+    color: #fff;
+    position: absolute;
+    top: 58.5%;
+    left: 3.9%;
+    width: 20%;
+    height: 7vh;
+    border-radius: 5%;
+    
+}
+.btn-c :hover{
+    color: rgb(255, 255, 255);
+    background-color: #0f79af;
+}
+
+.btn-c a{
+    text-decoration: none;
+    color: white;
+    /* background-color: white; */
+}
+.btn-c {
+    color: aliceblue;
+}
+
+.smallyone {
+    color: #fff;
+    position: absolute;
+    top: 67.5%;
+    left: 5.9%;
+    font-size: 14px;
+}
+
+.annual {
+    color: #fff;
+    position: absolute;
+    top: 75.7%;
+    left: 9.9%;
+    font-size: 14px;
+}
+
+.anbtn {
+    background-color: #0f79af;
+    color: #fff;
+    position: absolute;
+    top: 80.5%;
+    left: 3.9%;
+    width: 20%;
+    height: 7vh;
+    border-radius: 5%;
+}
+.anbtn :hover{
+    color: white;
+}
+
+.annualbelow {
+    width: 20%;
+    color: #fff;
+    position: absolute;
+    top: 88.7%;
+    left: 3.9%;
+    font-size: 14px;
+    justify-items: center;
+}
+
+.yourfavchannel {
+    width: 100%;
+
+    background-color: #fff;
+    height: 68vh;
+    display: flex;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 50%;
+}
+
+.channel {
+    margin-top: 2%;
+    width: 90%;
+
+    margin-left: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 32.5%);
+    gap: 1%;
+}
+
+.channel img {
+    max-width: 100%;
+}
+
+.contentleft {
+    width: 100%;
+
+    height: 50vh;
+    transform: translateY(5%);
+}
+
+.cl {
+    width: 75%;
+
+    transform: translateX(20%);
+    margin-top: 2%;
+    font-size: 2.8rem;
+    line-height: 3rem;
+    font-weight: 100;
+}
+
+button span a {
+    text-decoration: none;
+}
+
+.bl {
+    width: 75%;
+
+    transform: translateX(20%);
+    margin-top: 2%;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 100;
+}
+
+.channel div:hover {
+    box-shadow: 20px 20px 10px grey;
+    cursor: grab;
+}
+
+.onemembership {
+    width: 100%;
+
+    background-image: linear-gradient(to right, #000 40%, transparent 58%), url(https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/PRIME_multi-benefit_MAGNET_2X._CB1519820207_.jpg);
+    background-position: right top;
+    background-position-x: right;
+    background-position-y: top;
+    height: 68vh;
+    position: relative;
+
+}
+
+.remote {
+    width: 100%;
+    background-image: linear-gradient(to top, #000 0%, transparent 20%), url(https://images-na.ssl-images-amazon.com/images/G/01/digital/video/Magellan_MLP/MLP_Template_Image_Left._CR0,0,865,675_AC_.jpg);
+    height: 68vh;
+    background-repeat: no-repeat;
+    background-color: #000;
+    margin-top: 0;
+    position: relative;
+}
+
+.powerpuf {
+    width: 100%;
+    background-image: linear-gradient(to top, #000 0%, transparent 20%), url(https://m.media-amazon.com/images/G/01/digital/video/Magellan_MLP/IN-kids-30Jan._CR575,0,865,675_AC_.jpg);
+
+    height: 68vh;
+    background-repeat: no-repeat;
+    background-color: #000;
+    margin-top: 0;
+    position: relative;
+    background-position: right top;
+    background-position-x: right;
+    background-position-y: top;
+}
+
+.footer {
+    background-color: #0f171e;
+    width: 100%;
+    height: 15vh;
+}
+
+.clone {
+    width: 45%;
+    position: absolute;
+    left: 4%;
+    top: 18%;
+
+    color: #fff;
+    margin-top: 2%;
+    font-size: 2.8rem;
+    line-height: 3rem;
+    font-weight: 100;
+
+}
+
+.blone {
+    width: 44%;
+    position: absolute;
+    left: 4.3%;
+    top: 30%;
+    color: #fff;
+    margin-top: 2%;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 100;
+}
+
+.onlinebtn {
+
+    position: absolute;
+    top: 60%;
+    font-size: 18px;
+    left: 4.8%;
+}
+
+.cltwo {
+    width: 45%;
+    position: absolute;
+    right: 3.333%;
+    top: 18%;
+
+    color: #fff;
+    margin-top: 2%;
+    font-size: 2.8rem;
+    line-height: 3rem;
+    font-weight: 100;
+}
+
+.bltwo {
+    width: 44%;
+    position: absolute;
+    right: 4.3%;
+    top: 30%;
+    color: #fff;
+    margin-top: 2%;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 100;
+}
+
+.onlinebtnt {
+    position: absolute;
+    top: 65%;
+    left: 52%;
+    font-size: 18px;
+
+}
+
+.clonew {
+    width: 45%;
+    position: absolute;
+    left: 4%;
+    top: 18%;
+
+    color: #fff;
+    margin-top: 2%;
+    font-size: 2.8rem;
+    line-height: 3rem;
+    font-weight: 100;
+
+}
+
+.blonew {
+    width: 44%;
+    position: absolute;
+    left: 4.3%;
+    top: 30%;
+    color: #fff;
+    margin-top: 2%;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 100;
+
+}
+
+.onlinebtnw {
+    position: absolute;
+    top: 65%;
+    font-size: 18px;
+    left: 4.2%;
+}

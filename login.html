@@ -13,18 +13,92 @@
     <form id="login-form">
         <h2>Sign-In</h2>
         <label>Email</label>
-        <input type="email" id="email" placeholder="email">
+        <input type="email" id="email1" placeholder="email">
         <br>
         <label>password</label>
-        <input type="password" id="password" placeholder="password">
+        <input type="password" id="passwordd" placeholder="password">
         <br>
         <br>
-        <input type="submit">
-        <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
+        <button onclick="login(event)" class="hello">Sign In</button>
+        <!-- <input type="submit" onclick="login()"> -->
+        <p>By continuing, you agee to Amazon's Conditions of Use and Privacy Notice.</p>
         <hr>
         <p>New to Amazon</p>
-        <button id="login-button"><a href="./signup.html">Create your Amazon Account</a></button>
+        <button id="login-button"><a href="./signup.html" class="signup">Create your Amazon Account</a></button>
     </form>
 </div>
 </body>
 </html>
+
+<script>
+
+        // function  login()
+        // {
+            
+        //     let address1 = JSON.parse(localStorage.getItem("signupuser"));
+
+        //     // console.log(email, password);
+
+        //     let userdetail = {
+        //     email :document.getElementById("email1").value,
+        //     password :document.getElementById("passwordd" ).value
+                
+        //     };
+        //     // console.log(addressl);
+            
+        //     console.log(userdetail);
+
+        //     if(address1.email === userdetail.email && address1.password === userdetail.password){
+        //     window.location.href = "landingpage.html";
+        //     }   
+        //     else{
+        //         alert("Credential does not match");
+        //     };
+
+
+        //     name.value = "";
+        //     password.value = "";
+            
+            
+        // }
+
+
+        function login(e){
+            e.preventDefault();
+            let data = JSON.parse(localStorage.getItem("Data-User"));
+
+   
+        let user = {
+                email :document.getElementById('email1').value,
+                password : document.getElementById('passwordd').value
+
+        }
+        
+
+    //    console.log(email, password)
+       console.log(data.email, data.password);
+    
+        if(user.email === data.input && user.password === data.password){
+            // alert("Login Successfully");
+            console.log(data.password);
+            if(user.password==='12345'){
+                window.location.href = "index.html";
+
+
+            }
+            else{
+                window.location.href = "landingpage.html";
+
+            }
+            
+        }
+        else{
+            alert("Invalid Email or Password");
+            // window.location.href = "landingpage.html"
+        }
+
+        localStorage.setItem("user-data", JSON.stringify(user));
+
+        }
+
+</script>

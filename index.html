@@ -3,9 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Amazon Prime Video</title>
+    <link href="./index.css" rel="stylesheet">
 </head>
+
 <body>
+  <div id="navbar">
+    <img src="https://i.postimg.cc/BnWBVtY4/download.png">
+    <div id="left">
+      <a>Home</a>
+      <a class="TV">TV Show</a>
+      <a>Movies</a>
+      <a>Channels</a>
+      <a>Categories</a>
+    </div>
+      <!-- <div id="right">
+        <a>EN</a>
+        <a href="./login.html">Sign In</a>
+        </div> -->
+      <div id="m">   
+        <input type="text" oninput="debounce(main,1000)" id="movie" placeholder="Enter Movie Name"> 
+        <div id="movies"></div >
+       </div>
+</div>
+    <!-- <h2 id="head">Movie Search Engine</h2> -->
     
+    <div class="slideshow-container">
+
+        
+        <div class="Containers">
+          
+          <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_AkkadBakkadLaunch/6f85b5c6-0208-4478-b1c5-68ac55d0df6a._UR3000,600_SX1500_FMwebp_.jpeg" >
+          
+        </div>
+      
+        <div class="Containers">
+          
+          <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_InTheHeightslaunch/513813c5-b2e0-4197-9d76-b415489f86a4._UR3000,600_SX1500_FMwebp_.jpeg" >
+          
+        </div>
+      
+        <div class="Containers">
+         
+          <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_OneMicStandS2Launch/5d748aa5-37ea-4883-bcab-53ca35c8e5f8._UR3000,600_SX1500_FMwebp_.jpeg">
+         
+        </div>
+        <div class="Containers">
+          
+          <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_CROW_UN_SecretsofSinauli_DPv2/ff474f31-a03b-42f5-b827-086b4437fa05._UR3000,600_SX1500_FMwebp_.jpeg" >
+          
+        </div>
+      
+        <div class="Containers">
+          
+          <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_CROW_UN_IntotheWildVicky_DP/38e745f5-13fb-4671-b654-6204738f20f2._UR3000,600_SX1500_FMwebp_.jpeg" >
+          
+        </div>
+      
+        <div class="Containers">
+         
+          <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_Kdrama_VoiceLaunch/72a0da9a-71af-4175-b192-8b5e5461cb1e._UR3000,600_SX1500_FMwebp_.jpeg">
+         
+        </div>
+        <div class="Containers">
+         
+          <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_EridaLaunch/b83ad2a4-487d-411a-89fa-b66e073039e2._UR3000,600_SX1500_FMwebp_.jpeg">
+         
+        </div>
+     <div class="Containers">
+         <img src="https://m.media-amazon.com/images/S/sonata-images-prod/PV_IN_CROW_UN_StarvsFoodS2_DP/16de3940-c1ae-47b1-85d1-91a462a80657._UR3000,600_SX1500_FMwebp_.jpeg" alt="">
+     </div>
+      
+      
+        <div class="Back" onclick="plusSlides(-1)"></div>
+        <div class="forward" onclick="plusSlides(1)"></div>
+    </div>
+      <br>
+      
+     
+      <div class="indicator mb-0">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <span class="dots" onclick="currentSlide(2)"></span>
+        <span class="dots" onclick="currentSlide(3)"></span>
+        <span class="dots" onclick="currentSlide(4)"></span>
+        <span class="dots" onclick="currentSlide(5)"></span>
+        <span class="dots" onclick="currentSlide(6)"></span>
+        <span class="dots" onclick="currentSlide(7)"></span>
+        <span class="dots" onclick="currentSlide(8)"></span>
+      </div>
+    <div id="show"></div>
+    <div id="hell"></div>
+    <h1 id="pop">Popular Movies</h1>
+    <div id="display"></div>
 </body>
 </html>
+<script>
+      
+      let display = document.getElementById("display");
+
+      let hell = document.getElementById('hell');
+        
+        async function dis(){
+             
+        
+         try{
+             
+             display.innerHTML = null;
+
+            //  let res = await fetch("http://www.omdbapi.com/?s=Avengers&popularity.desc&apikey=1f383b02");
+
+             let res = await fetch("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=e57244401adfc359ef9a9fd132bee2f5")
+
+             let data = await res.json();
+  
+             console.log(data.results);    
+             let s = data.results; 
+
+             s.forEach(function(m){
+                
+                let box = document.createElement("div");
+
+                box.setAttribute("class", "hello");  
+
+                let div = document.createElement('div');
+
+                let Title = document.createElement('p');
+                Title.innerHTML = `Title -${m.original_title} `;
+
+                let rating = document.createElement('p');
+                rating.innerHTML = `rating -${m.vote_average} `;
+
+                // let Type = document.createElement('p');
+                // Type.innerHTML = `Type -${m.Type} `;
+
+                let image = document.createElement('img');
+                image.src ="https://image.tmdb.org/t/p/w500"+m.poster_path;
+                
+                box.append(Title,rating,image);
+                display.append(box);
+               
+
+             })
+             
+
+            
+
+         }
+
+            catch(e){
+
+            }
+              
+        }
+
+
+    
+           let movie_div = document.getElementById("movies");
+           
+           let timeId;
+           
+           let show = document.getElementById("show");
+
+        
+
+             async function searchMovies(movie_name){
+
+                try{
+
+                    show.innerHTML = null;
+                  
+                    let res = await fetch(`http://www.omdbapi.com/?s=${movie_name}&apikey=1f383b02`);
+
+                    let data =  await res.json(); 
+                
+                    console.log(data); 
+
+                    return data;
+
+                    let rating = document.createElement('p');
+                    rating.innerHTML = `Rating - ${data.imdbID}`;
+
+                    show.append(rating);
+  
+                   }
+                
+                catch(e){
+
+                console.log("e",e);
+
+                }
+        
+            }
+
+            function appendMovies(movies){
+            
+            let div = document.createElement('div');
+        
+            if(movies===undefined){
+
+                return false;   
+            }
+
+            movie_div.innerHTML = null;
+            
+
+            movies.forEach(function (m) {
+                
+            let p = document.createElement('p');
+            p.innerHTML= m.Title;
+            p.addEventListener("click", function() {
+
+                selMovies(m);
+                
+            })
+            
+
+            movie_div.appendChild(p);
+            
+    
+            });
+            }
+    
+        function selMovies(movie){
+
+            hell.style.display= "block";    
+            hell.innerHTML = null;
+            movies.innerHTML=null;
+            let d = document.createElement('div');
+
+            let Title = document.createElement('p');
+            Title.innerHTML = `Title: ${movie.Title}`;
+
+            // let rating = document.createElement('p');
+            // rating.innerHTML = `Rating ${movie.imdbID}`;
+
+            let image = document.createElement('img');
+            image.src = movie.Poster;
+            console.log(movie);
+
+            let year = document.createElement('p');
+            year.innerHTML = `Release: ${movie.Year}`;
+
+            let Type = document.createElement('p');
+            Type.innerHTML = `Type: ${movie.Type}`;
+
+            
+
+            d.append(Title, year, Type,image);
+            hell.append(d);
+        }
+    
+        async function main(){
+
+        let name = document.getElementById("movie").value;
+        
+        if(name.length<3){
+            return false;
+        }
+
+        let res = await searchMovies(name);
+
+        let m= res.Search;
+
+         appendMovies(m);
+
+        // console.log(res.search);
+
+    }
+
+    function debounce(func, delay) {
+
+if(timeId){
+    clearTimeout(timeId);
+}
+
+timeId = setTimeout(function(){
+
+     func()
+
+ },delay )
+}
+
+dis();
+
+// colusal-manula+automatic
+var slidePosition = 1;
+SlideShow(slidePosition);
+
+// forward/Back controls
+function plusSlides(n) {
+  SlideShow(slidePosition += n);
+}
+
+//  images controls
+function currentSlide(n) {
+  SlideShow(slidePosition = n);
+}
+
+function SlideShow(n) {
+  var i;
+  var slides = document.getElementsByClassName("Containers");
+  var circles = document.getElementsByClassName("dots");
+  if (n > slides.length) {slidePosition = 1}
+  if (n < 1) {slidePosition = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < circles.length; i++) {
+      circles[i].className = circles[i].className.replace(" enable", "");
+  }
+  slides[slidePosition-1].style.display = "block";
+  circles[slidePosition-1].className += " enable";
+   
+
+} 
+
+var slidePosition = 0;
+SlideShowe();
+
+function SlideShowe() {
+  var i;
+  var slides = document.getElementsByClassName("Containers");
+  var circles = document.getElementsByClassName("dots");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (var j = 0; j < circles.length; j++) {
+      circles[j].className = circles[j].className.replace("enable", "");
+  }
+  
+  if (slidePosition > slides.length-1) 
+  {
+      slidePosition = 0;
+
+}
+slidePosition++;
+  slides[slidePosition-1].style.display = "block";
+  circles[slidePosition-1].className += " enable";
+setTimeout(SlideShowe, 5000);
+   
+}
+
+</script>
+
+
+
